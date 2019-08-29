@@ -7,7 +7,7 @@ import tempfile
 import pandas as pd
 
 from globals import DATA
-from train_parser import UD2, log
+from globals import *
 
 this_file = __file__
 my_code = os.path.dirname(this_file)

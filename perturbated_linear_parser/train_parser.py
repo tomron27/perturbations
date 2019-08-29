@@ -5,10 +5,6 @@ from globals import *
 from trainer_wrapper import TrainRunUnit
 from utils import *
 
-UD2 = os.path.join(DATA,UNIVERSAL_DEP_DIR)
-
-log = logging.getLogger(__name__)
-
 
 def train_parser_all_lng(specific_languages=None,is_train_dev_together=False,with_words = False):
 

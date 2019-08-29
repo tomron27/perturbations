@@ -169,7 +169,7 @@ if (train_dev_together):
     elif (baseline=='k_best'):
         all_ready_lng = ray.get([exec_process_obj.execute_parallel_baseline_k_best_trees.remote(language,train_models = train_models) for language in language_dirs])
 else:
-    model_dir_prefix = 'UD2'
+    model_dir_prefix = 'UD'
     language_dirs = [lng for lng in os.listdir(DATA) if lng.startswith(model_dir_prefix) and lng.split('_')[1]]
     all_ready_lng = ray.get([exec_process_obj.execute_parallel.remote(language,
                                                                eval_method='oracle',
