@@ -211,9 +211,9 @@ def create_files_per_language_cross_lingual(num_sentences_per_lng_train = 1000,n
     lng_list = list(set([corpus.split('_')[0] for corpus in lng_prefix_to_corpus.keys()]))
     for index,target_lng in enumerate(lng_list,1):
         if (is_train_dev_together):
-            model_dir_prefix = 'BASELINE_TRAIN_DEV_TOG_'
+            model_dir_prefix = BASELINE_TRAIN_DEV_PREFIX
         else:
-            model_dir_prefix = 'UD2_'
+            model_dir_prefix = UD_PREFIX
         #create a directory per language
         model_dir = os.path.join(DATA,model_dir_prefix+target_lng)
 
@@ -269,9 +269,9 @@ def create_files_per_language_cross_lingual(num_sentences_per_lng_train = 1000,n
 def create_files_per_language_mono_lingual(num_sentences_per_lng_train=1000, num_sentences_per_lng_dev=500,is_train_dev_together=False):
 
     if (is_train_dev_together):
-        model_dir_prefix = 'BASELINE_TRAIN_DEV_TOG_'
+        model_dir_prefix = BASELINE_TRAIN_DEV_PREFIX
     else:
-        model_dir_prefix = 'UD2_'
+        model_dir_prefix = UD_PREFIX
 
 
     # key: corpus name; value: [subset_of_train_set,subset_of_dev_set]

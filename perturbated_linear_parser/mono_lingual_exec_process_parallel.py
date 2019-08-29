@@ -164,10 +164,10 @@ exec_process_obj = exec_process_parallel(create_files=create_files,is_train_dev_
 mono_lingual_relevant_lngs = ['ar','zh','nl','en','fr','de','he','ja','ko','pt','sl','vi','sv','ru','es']
 
 if (is_train_dev_together):
-    model_dir_prefix = 'BASELINE_TRAIN_DEV_TOG_'
+    model_dir_prefix = BASELINE_TRAIN_DEV_PREFIX
     language_dirs = [lng for lng in os.listdir(DATA) if lng.startswith(model_dir_prefix) and lng.split('_')[-1] in mono_lingual_relevant_lngs ]
 else:
-    model_dir_prefix = 'UD2_'
+    model_dir_prefix = UD_PREFIX
     language_dirs = [lng for lng in os.listdir(DATA) if lng.startswith(model_dir_prefix) and lng.split('_')[-1] in mono_lingual_relevant_lngs]
 
 if (baseline =='1_best'):

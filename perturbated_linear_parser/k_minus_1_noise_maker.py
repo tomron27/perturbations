@@ -112,9 +112,9 @@ def get_optimal_noise(language):
 def create_noised_dps_over_all_languages(specific_languages = None,is_train_dev_together=False,k_best_baseline = False,fixed_noise = False,noise_method='m',mono_lingual=False):
 
     if (is_train_dev_together) :
-        model_dir_prefix = 'BASELINE_TRAIN_DEV_TOG_'
+        model_dir_prefix = BASELINE_TRAIN_DEV_PREFIX
     else:
-        model_dir_prefix = 'UD2_'
+        model_dir_prefix = UD_PREFIX
 
     language_dirs = [lng for lng in os.listdir(DATA) if lng.startswith(model_dir_prefix)]
 

@@ -14,9 +14,9 @@ log = logging.getLogger(__name__)
 def oracle_wrapper_for_all_languages(specific_languages=None,final_file_name = 'final_UAS_per_lng_k_minus_1' ,is_train_dev_together=False):
 
     if (is_train_dev_together):
-        model_dir_prefix = 'BASELINE_TRAIN_DEV_TOG_'
+        model_dir_prefix = BASELINE_TRAIN_DEV_PREFIX
     else:
-        model_dir_prefix = 'UD2_'
+        model_dir_prefix = UD_PREFIX
 
     language_dirs = [lng for lng in os.listdir(RESULTS_DIR) if '~' not in lng]
 

@@ -9,9 +9,9 @@ from utils import *
 def train_parser_all_lng(specific_languages=None,is_train_dev_together=False,with_words = False):
 
     if (is_train_dev_together):
-        model_dir_prefix = 'BASELINE_TRAIN_DEV_TOG_'
+        model_dir_prefix = BASELINE_TRAIN_DEV_PREFIX
     else:
-        model_dir_prefix = 'UD2_'
+        model_dir_prefix = UD_PREFIX
 
     language_dirs = [dir for dir in os.listdir(DATA) if dir.startswith(model_dir_prefix)]
 
