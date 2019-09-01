@@ -87,7 +87,7 @@ def convertconll2liang(orig, converted):
     command = "java -cp {0} converter.LiangTreeConverter c2l {1} {2}".format(
         converter, orig, converted
     )
-    #print command
+    print command
     p = subprocess.Popen(command, shell=True)
     p.communicate()
 

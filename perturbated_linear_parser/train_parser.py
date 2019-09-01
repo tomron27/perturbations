@@ -33,8 +33,8 @@ def train_parser_all_lng(specific_languages=None,is_train_dev_together=False,wit
 
         train_file_path = os.path.join(language_path, [file for file in os.listdir(language_path) if file.endswith("train.conllu")][0])
 
-        tmp_train_file =  tempfile.NamedTemporaryFile() #os.path.join(language_path,'tem_train_file')
-        convertconll2liang(train_file_path,tmp_train_file.name)
+        tmp_train_file = tempfile.NamedTemporaryFile() #os.path.join(language_path,'tem_train_file')
+        convertconll2liang(train_file_path, tmp_train_file.name)
         tru = TrainRunUnit(target_lng, tmp_train_file.name, model_path)
         if (not with_words):
             tru.train_no_words()

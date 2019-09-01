@@ -131,13 +131,15 @@ public class ConllStru {
 		ArrayList<String> list = new ArrayList<String>();
 		while(lr.hasNextLine()){
 			String line = lr.readNextLine();
-			if(line.equals("")){
-				ConllStru cs = new ConllStru(list);
-				cs.getPrintString();
-				list = new ArrayList<String>();
-				continue;
+			if(!line.startsWith("#")){
+				if(line.equals("")){
+					ConllStru cs = new ConllStru(list);
+					cs.getPrintString();
+					list = new ArrayList<String>();
+					continue;
+				}
+				list.add(line);
 			}
-			list.add(line);
 		}
 		lr.closeAll();
 		
