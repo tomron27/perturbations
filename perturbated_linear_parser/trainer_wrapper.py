@@ -1,3 +1,4 @@
+import sys
 import os
 import subprocess
 import tempfile
@@ -5,9 +6,8 @@ import random
 
 from utils import conll_file_2_sentences, sentences_2_conll_file, liang_file_2_sentences, sentences_2_liang_file
 
-
-python_interpeter_windows = "C:\Users\RYAZDI\AppData\Local\Continuum\Anaconda2\python "
-multitrainer = 'python ../liang_parser/multitrainer.py'
+# Current python executable
+multitrainer = '{} ../liang_parser/multitrainer.py'.format(sys.executable)
 parser = "../liang_parser/parser.py"
 template_words = "../dp_models/q2.templates"
 template_no_words = "../dp_models/templates_no_words"
