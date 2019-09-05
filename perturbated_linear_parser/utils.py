@@ -183,7 +183,7 @@ def merge_csv_with_summary_result(baseline_csv,summary_file = '../../../PREDICTE
 def create_files_per_language_cross_lingual(num_sentences_per_lng_train = 1000,num_sentences_per_lng_dev = 500,is_train_dev_together=False):
     # key: corpus name; value: [subset_of_train_set,subset_of_dev_set]
     lng_prefix_to_corpus = {}
-    train_set_dir = os.path.join(UD2,'ud-treebanks-conll2017')
+    train_set_dir = os.path.join(DATA,'ud-treebanks-conll2017')
     log.info("start reading train and dev files for all languages")
     for corpus_dir_target in os.listdir(train_set_dir):
         corpus_path_target = os.path.join(train_set_dir,corpus_dir_target)
@@ -249,7 +249,7 @@ def create_files_per_language_cross_lingual(num_sentences_per_lng_train = 1000,n
             sentences_2_conll_file(sentences=all_other_lng_corpus_train_dev_together,filepath=os.path.join(model_dir, target_lng + '_all_other_lng_train.conllu'), mode='w')
 
         #reading test set per language and adding it into the language folder
-        test_folder_path = os.path.join(UD2,'ud-test-v2.0-conll2017','gold','conll17-ud-test-2017-05-09')
+        test_folder_path = os.path.join(DATA,'ud-test-v2.0-conll2017','gold','conll17-ud-test-2017-05-09')
         test_file_name_target_list = [file for file in os.listdir(test_folder_path) if file.startswith(target_lng)]
 
         create_dir(os.path.join(model_dir, 'test'))
@@ -277,7 +277,7 @@ def create_files_per_language_mono_lingual(num_sentences_per_lng_train=1000, num
     # key: corpus name; value: [subset_of_train_set,subset_of_dev_set]
     lng_prefix_to_corpus = {}
 
-    train_set_dir = os.path.join(UD2, 'ud-treebanks-conll2017')
+    train_set_dir = os.path.join(DATA, 'ud-treebanks-conll2017')
     log.info("start reading train and dev files for all languages")
     for corpus_dir_target in os.listdir(train_set_dir):
 
@@ -348,7 +348,7 @@ def create_files_per_language_mono_lingual(num_sentences_per_lng_train=1000, num
                                    mode='w')
 
         # reading test set per language and adding it into the language folder
-        test_folder_path = os.path.join(UD2, 'ud-test-v2.0-conll2017', 'gold', 'conll17-ud-test-2017-05-09')
+        test_folder_path = os.path.join(DATA, 'ud-test-v2.0-conll2017', 'gold', 'conll17-ud-test-2017-05-09')
         test_file_name_target_list = [file for file in os.listdir(test_folder_path) if file.startswith(target_lng)]
 
         create_dir(os.path.join(model_dir, 'test'))

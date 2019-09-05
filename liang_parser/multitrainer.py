@@ -50,14 +50,14 @@ import random
 import gflags as flags
 FLAGS=flags.FLAGS
 
-flags.DEFINE_integer("iter", 15, "number of passes over the whole training data", short_name="i") # changed 15 to 20
+flags.DEFINE_integer("iter", 10 , "number of passes over the whole training data", short_name="i") # changed 15 to 20
 flags.DEFINE_boolean("avg", True, "averaging parameters") # changed True to False
 flags.DEFINE_boolean("naiveavg", False, "naive sum for averaging (slow!)")
 flags.DEFINE_string ("train", None, "training corpus")
 flags.DEFINE_string ("dev", None, "dev corpus")
 flags.DEFINE_string ("out", None, "output file (for weights)")
 flags.DEFINE_boolean ("finaldump", False, "dump best weights at the end instead of at each new high")
-flags.DEFINE_integer ("multi", 1, "multiprocessing: # of CPUs, -1 to use all CPUs")
+flags.DEFINE_integer ("multi", -1, "multiprocessing: # of CPUs, -1 to use all CPUs")
 
 ##flags.DEFINE_boolean("singletrain", False, "use single thread for training")
 ##flags.DEFINE_boolean("singledev", False, "use single thread for eval_on_dev")

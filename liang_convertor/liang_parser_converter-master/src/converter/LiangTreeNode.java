@@ -138,7 +138,6 @@ public class LiangTreeNode {
 		while(lr.hasNextLine()){
 			String line = lr.readNextLine().trim();
 			if(line.equals("")) continue;
-			if(line.startsWith("#")) continue;
 			//System.out.println(line);
 			LiangTreeNode ltn = parse(line);
 			//System.out.println(ltn.getLiangFormatString());

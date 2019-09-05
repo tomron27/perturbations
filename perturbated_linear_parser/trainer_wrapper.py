@@ -89,7 +89,7 @@ class TrainRunUnit:
             "--dev", self.dev_file,
             "--out", self.model, "-w", template_no_words
         ]
-        #print " ".join(run_command)
+        print " ".join(run_command)
         p = subprocess.Popen(" ".join(run_command), shell=True)
         p.communicate()
 

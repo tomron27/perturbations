@@ -1,5 +1,6 @@
 import subprocess
 import os
+import sys
 
 # parser = "../liang_parser/parser.py"
 
@@ -57,8 +58,8 @@ class ParserRunUnit:
                    )
         return str
 
-    def parse_no_words(self,k_best=False):
-        run_command = ["python "+parser, '-w', self.model, "--input_file", self.input_file]
+    def parse_no_words(self, k_best=False):
+        run_command = [sys.executable + " " + parser, '-w', self.model, "--input_file", self.input_file]
         if self.noise:
             run_command += self.add_noise_to_cmd()
         if (k_best):

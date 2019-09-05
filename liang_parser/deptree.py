@@ -191,8 +191,10 @@ class DepTree(object):
                 index += 1
 
         assert line[index] == ')', "Invalid tree string %s at %d" % (line, index)
-
-        t = DepTree(headidx, lefts, rights)
+        try:
+            t = DepTree(headidx, lefts, rights)
+        except:
+            pass
         return index+1, t  ## N.B.: +1
 
     def is_punc(self):

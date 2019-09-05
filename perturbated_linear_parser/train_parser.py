@@ -27,7 +27,7 @@ def train_parser_all_lng(specific_languages=None,is_train_dev_together=False,wit
         language_path = os.path.join(DATA, language_dir)
 
         model_dir = os.path.join(language_path,'Models','k_minus_1')
-        create_dir(model_dir,drop_if_exist=False)
+        create_dir(model_dir, drop_if_exist=True)
         target_lng = language_dir.split('_')[-1]
         model_path = os.path.join(model_dir, 'model_'+target_lng)
 

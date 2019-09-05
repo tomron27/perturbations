@@ -46,15 +46,15 @@ if (train_dev_together):
 else:
     model_dir_prefix = UD_PREFIX
     language_dirs = [lng for lng in os.listdir(DATA) if lng.startswith(model_dir_prefix) and lng.split('_')[1]]
-    # all_ready_lng = ray.get([exec_process_obj.execute_parallel.remote(language,
-    #                                                            eval_method='oracle',
-    #                                                            train_models=train_models,
-    #                                                            find_noise=find_noise,
-    #                                                            is_oracle_inference_results=True,
-    #                                                            fixed_noise=fixed_noise,
-    #                                                            # noise_method=noise_method) for language in language_dirs])
+    all_ready_lng = ray.get([exec_process_obj.execute_parallel.remote(language,
+                                                               eval_method='oracle',
+                                                               train_models=train_models,
+                                                               find_noise=find_noise,
+                                                               is_oracle_inference_results=True,
+                                                               fixed_noise=fixed_noise,
+                                                               noise_method=noise_method) for language in language_dirs])
 
-    # DEBUG - sequential execution
-    for language in language_dirs:
-        exec_process_single.execute_single(language, eval_method='oracle', train_models=True, find_noise=True,
-                         is_oracle_inference_results=True, fixed_noise=False, noise_method='m')
+    # # DEBUG - sequential execution
+    # for language in language_dirs:
+    #     exec_process_single.execute_single(language, eval_method='oracle', train_models=True, find_noise=True,
+    #                      is_oracle_inference_results=True, fixed_noise=False, noise_method='m')
