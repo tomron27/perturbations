@@ -137,7 +137,9 @@ def create_noised_dps_over_all_languages(specific_languages = None,is_train_dev_
 
         language_model_path = os.path.join(language_dir_path,'Models','k_minus_1',"model_"+language.split('_')[-1])
 
-        test_files_per_lng = [test_file for test_file in os.listdir(os.path.join(language_dir_path,"test")) if '~' not in test_file and 'predicted_pos' in test_file]
+        #test_files_per_lng = [test_file for test_file in os.listdir(os.path.join(language_dir_path,"test")) if '~' not in test_file and 'predicted_pos' in test_file]
+
+        test_files_per_lng = [test_file for test_file in os.listdir(os.path.join(language_dir_path,"test")) if '~' not in test_file]
 
         for t_file in test_files_per_lng:
             t_file_path = os.path.join(language_dir_path,'test', t_file)

@@ -167,21 +167,21 @@ class exec_process_single():
             optimal_n.find_optimal_noise_per_language(eval_method=eval_method,specific_languages=language,noise_method=noise_method)
             logging.info('Optimal noise learning ended')
 
-        logging.info('-' * 50)
-        logging.info('Noised dependency trees creation started')
-        noise_maker.create_noised_dps_over_all_languages(language,is_train_dev_together= False,k_best_baseline=False,fixed_noise=fixed_noise,noise_method=noise_method)
-        logging.info('Noised dependency trees creation ended')
-
-
-        logging.info('-' * 50)
-        logging.info('mst wrapper started')
-        mst_wrapper.mst_wrapper_for_all_languages(language,
-                                                  final_file_name='UAS_perturbated_MLN_perturbated_after_predicted_pos',
-                                                  is_train_dev_together=False,
-                                                  is_mst=True,
-                                                  given_one_file_repeated_sentnces=False,
-                                                  remove_less_than_k_duplication=False)
-        logging.info('mst wrapper ended')
+        # logging.info('-' * 50)
+        # logging.info('Noised dependency trees creation started')
+        # noise_maker.create_noised_dps_over_all_languages(language,is_train_dev_together= False,k_best_baseline=False,fixed_noise=fixed_noise,noise_method=noise_method)
+        # logging.info('Noised dependency trees creation ended')
+        #
+        #
+        # logging.info('-' * 50)
+        # logging.info('mst wrapper started')
+        # mst_wrapper.mst_wrapper_for_all_languages(language,
+        #                                           final_file_name='UAS_perturbated_MLN_perturbated_after_predicted_pos',
+        #                                           is_train_dev_together=False,
+        #                                           is_mst=True,
+        #                                           given_one_file_repeated_sentnces=False,
+        #                                           remove_less_than_k_duplication=False)
+        # logging.info('mst wrapper ended')
 
         if (is_oracle_inference_results):
             logging.info('Oracle wrapper started')

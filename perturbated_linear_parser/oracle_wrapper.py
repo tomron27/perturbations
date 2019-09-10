@@ -34,7 +34,7 @@ def oracle_wrapper_for_all_languages(specific_languages=None,final_file_name = '
             print language
             language_dir = os.path.join(RESULTS_DIR, language)
 
-            gold_test_file = os.path.join(language_dir,'test_set',language.replace("_predicted_pos",'.conllu')+"_predicted_pos")#language+'.conllu')
+            gold_test_file = os.path.join(language_dir,'test_set',language+'.conllu')
 
 
             noised_files_dir = os.path.join(language_dir, NOISED_LIST_DIR_NAME)
