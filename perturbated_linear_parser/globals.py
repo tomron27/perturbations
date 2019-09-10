@@ -3,7 +3,7 @@ from os.path import join
 import logging
 
 BASE_DIR = "/home/tomron27@st.technion.ac.il/projects/perturbations/"
-DATA = join(BASE_DIR, "data")
+DATA = join(BASE_DIR, "data_test")
 UD_PREFIX = "UD_"
 BASELINE_TRAIN_DEV_PREFIX = "BASELINE_TRAIN_DEV_TOG_"
 NOISED_LIST_DIR_NAME = 'noised_list'
